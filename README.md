@@ -1,2 +1,2 @@
 # ConvertImages
-This algoritm converts images in .bmp to .jpg
+This script converts images in .bmp to .jpg
