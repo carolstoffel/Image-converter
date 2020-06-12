@@ -8,4 +8,4 @@ This script is still in development and further will contain a GUI, with some ot
 - option to remove the files and just keep the converted or no
 - more options of formats to conversion
 
-The interface is being developed with the Python library tkinter.
+The interface is being developed with the tkinter Python library.
