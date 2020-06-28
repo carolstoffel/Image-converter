@@ -29,8 +29,6 @@ c=0
 for text, mode in MODES:
     Radiobutton(root, text=text, variable=formato, value=mode).grid(row=0, column=c)
     c += 1
-command=lambda: clicked(pizza.get())
-
 
 e = Entry(root, borderwidth=2,width=40, bg="white")
 e.grid(row=2, column=1)
