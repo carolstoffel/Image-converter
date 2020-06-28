@@ -22,6 +22,7 @@ def tratar_path(target_directory):
 def files(target_directory):
     #old_extension = '.bmp'
     #new_extension = '.jpg'
+    image_extension = ['.bmp', '.jpg', '.png', '.jpeg', '.gif']
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
             if 'BKP_OLD_IMAGES' not in root:
@@ -30,7 +31,8 @@ def files(target_directory):
                 filename = dir_new[-1]
                 file, extension = splitext(filename)
                 dir = target_directory+root[1:]
-                convert(file, extension, dir, new_extension, filename)
+                if extension in image_extension:
+                    convert(file, extension, dir, new_extension, filename)
 
 def convert(file, extension, dir, new_extension, filename):
     if extension != new_extension:
