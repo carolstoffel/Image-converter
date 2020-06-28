@@ -1,11 +1,13 @@
-# ConvertImages
-This script converts images .bmp into .jpg. 
+# Image-converter
+Esse programa converte imagens para os formatos .bmp, .png e .jpg, de um diretório e todos seus subdiretórios.
 
-First, it will ask to the user insert the path and then will convert all .bmp files to .jpg, including the .bmp files in the directory the user inserted and also the .bmp files inside its subdirectories.
-After that, it will move the older files(.bmp) to a backup folder.
-This script is still in development and further will contain a GUI, with some other options, like:
-- option to create the backup folder or no
-- option to remove the files and just keep the converted or no
-- more options of formats to conversion
+- Primeiro irá solicitar o formato desejado para a conversão.
+- Depois é possível escolher a pasta desejada para conversão.
+- Existe a opção de criar uma pasta de backup, no mesmo diretório, para salvar as fotos no formato antigo. Caso essa opção não seja marcada, o programa irá excluir as imagens com os formatos antigos.
 
-The interface is being developed with the tkinter Python library.
+A interface foi desenvolvida com a biblioteca Tkinter.
+
+### Screenshoot
+![](https://i.ibb.co/gDw42bS/Screenshot-2.png)
+
+> Conversor de imagem
