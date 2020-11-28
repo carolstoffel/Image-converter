@@ -3,7 +3,7 @@ from tkinter import filedialog
 import convert_image
 
 root = Tk()
-root.title('Conversor de imagem')
+root.title('Image Converter')
 root.geometry('380x100')
 
 

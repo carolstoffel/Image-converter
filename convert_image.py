@@ -12,14 +12,8 @@ def main(path, backup, format):
     target_directory = path
     back = backup
     new_extension = format
-    target_directory = manage_path(target_directory)
     change_dir_to = os.chdir("{}".format(target_directory))
     files(target_directory)
-
-
-def manage_path(target_directory):
-    tg = target_directory.replace('/', '\\')
-    return tg
 
 
 def files(target_directory):
@@ -27,11 +21,9 @@ def files(target_directory):
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
             if 'BKP_OLD_IMAGES' not in root:
-                dir = os.path.join(root, name)
-                dir_new = dir.split('\\')
-                filename = dir_new[-1]
+                filename = os.path.join(root, name)
                 file, extension = splitext(filename)
-                dir = target_directory + root[1:]
+                dir = target_directory
                 if extension in image_extension:
                     convert(file, extension, dir, new_extension, filename)
 
