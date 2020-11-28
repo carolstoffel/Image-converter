@@ -5,19 +5,19 @@ import os
 import shutil
 
 
-def main(path, backup, formato):
+def main(path, backup, format):
     global target_directory
     global back
     global new_extension
     target_directory = path
     back = backup
-    new_extension = formato
-    target_directory = tratar_path(target_directory)
+    new_extension = format
+    target_directory = manage_path(target_directory)
     change_dir_to = os.chdir("{}".format(target_directory))
     files(target_directory)
 
 
-def tratar_path(target_directory):
+def manage_path(target_directory):
     tg = target_directory.replace('/', '\\')
     return tg
 
@@ -56,7 +56,6 @@ def do_backup(dir, file, extension):
     try:
         if not os.path.isdir(os.path.join(dir, 'BKP_OLD_IMAGES')):
             # creates the backup directory
-            # os.mkdir(dir + './{}'.format('BKP_OLD_IMAGES'))
             os.mkdir(os.path.join(dir, 'BKP_OLD_IMAGES'))
             print('Created the {} directory'.format('BKP_OLD_IMAGES'))
     except:
