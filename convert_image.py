@@ -23,8 +23,6 @@ def tratar_path(target_directory):
 
 
 def files(target_directory):
-    # old_extension = '.bmp'
-    # new_extension = '.jpg'
     image_extension = ['.bmp', '.jpg', '.png', '.jpeg', '.gif']
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
@@ -56,9 +54,10 @@ def convert(file, extension, dir, new_extension, filename):
 
 def do_backup(dir, file, extension):
     try:
-        if not os.path.isdir(dir + './' + 'BKP_OLD_IMAGES'):
+        if not os.path.isdir(os.path.join(dir, 'BKP_OLD_IMAGES')):
             # creates the backup directory
-            os.mkdir(dir + './{}'.format('BKP_OLD_IMAGES'))
+            # os.mkdir(dir + './{}'.format('BKP_OLD_IMAGES'))
+            os.mkdir(os.path.join(dir, 'BKP_OLD_IMAGES'))
             print('Created the {} directory'.format('BKP_OLD_IMAGES'))
     except:
         print("It wasn't possible to create the dir")
@@ -71,7 +70,6 @@ def do_backup(dir, file, extension):
 
 
 def do_exclusion(dir, file, extension):
-    #source = dir + '\\' + file + extension
     source = os.path.join(dir, file + extension)
     try:
         os.remove(source)
